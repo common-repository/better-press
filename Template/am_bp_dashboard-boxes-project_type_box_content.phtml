@@ -1,0 +1,64 @@
+
+<h4>Betterplace.org Project Type</h4> <?php
+?>
+<lable>
+	<?php _e('Choose Project Type', 'BetterPress'); ?>
+</lable>
+<select name="project_type" size="1">
+	<option value="normal" <?php
+	if ($project_type == 'normal') {echo 'selected';
+	}
+	?> ><?php _e('Betterplace.org project', 'BetterPress') ?></option>
+	<option value="other" <?php
+	if ($project_type == 'coop_project') {echo 'selected';
+	}
+	?> ><?php _e('Other project', 'BetterPress'); ?> </option>
+</select>
+
+<h4><?php _e('Betterplace ID', 'BetterPress'); ?></h4>
+
+<input type="text" name="am_bp_betterplace_id" value="<?php echo $bp_id; ?>" size="20">
+
+<h4><?php _e('Attached Blog Category', 'BetterPress'); ?></h4>
+<?php
+
+echo '<select name="am_bp_attach_blog">';
+echo "<option value='none' ";
+if (get_post_meta($post -> ID, 'am_bp_attach_blog', true) == 'none') {
+	echo 'selected';
+}
+echo '>none</option>';
+foreach ($Categories as $cat) {
+	echo "<option value='" . $cat -> cat_ID . "'";
+	if (get_post_meta($post -> ID, 'am_bp_attach_blog', true) == $cat -> cat_ID) {
+		echo 'selected ';
+	}
+	echo '>' . $cat -> cat_name . '</option>';
+}
+echo '</select>';
+?>
+<h4><?php _e('Project Data', 'BetterPress'); ?></h4> <?php
+
+if($int_id){
+
+?>
+
+<p>Project ID: <b><?php echo $int_id; ?>
+</b></p>
+<?php
+if($attached_pages){
+?>
+<h4><?php _e('Sites that are attached to this Project', 'BetterPress'); ?></h4>
+<ul><?php
+foreach ($attached_pages as $page) {
+	$attach_type = get_post_meta($page->ID, 'am_bp_post_attach', true);
+	echo '<li>' . $page -> post_title . " - ".$attach_type."</li>";
+}
+echo '</ul>';
+} }
+
+else{
+?>
+<h5><?php _e('No data', 'BetterPress'); ?></h5>
+ <?php
+}

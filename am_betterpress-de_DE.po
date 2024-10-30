@@ -1,0 +1,21 @@
+# Translation of plugin Better Press in German
+# Copyright (C) 2013 Art and the Machine.
+# This file is distributed under the same license as the Plugin Better Press.
+# Silas Katzenbach <mail@artandthemachine.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Press 0.9\n"
+"Report-Msgid-Bugs-To: mail@artandthemachine.com\n"
+"POT-Creation-Date: 2013-05-18 11:11 gmt+1\n"
+"PO-Revision-Date: 2013-05-18 11:11 gmt+1\n"
+"Last-Translator: Silas Katzenbach <mail@artandthemachine.com>\n"
+"Language-Team: Art and the Machine <mail@artandthemachine.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: am_bp_ConfigFunctions.php:8
+msgid "Projects"
+msgstr "Projekte"

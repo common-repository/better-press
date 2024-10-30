@@ -1,0 +1,34 @@
+
+<lable><?php _e('Attach Page to Project', 'BetterPress'); ?></lable>
+<select name="am_bp_post_attach" size="1">
+<option value="" <?php
+if (!$post_attach || $post_attach == '') {echo 'selected';
+}
+?> ><?php _e('No attachment', 'BetterPress'); ?>
+</option>
+<option value="gallery" <?php
+if ($post_attach == "gallery") {echo 'selected';
+}
+?> ><?php _e('Attach as Project Galery Page', 'BetterPress') ?>
+</option>
+</select>
+<select name="am_bp_int_id" size="1">
+<option value="" <?php
+if (!$post_attach || $post_attach == '') {echo 'selected';
+}
+?> >
+<?php _e('No Project Choosen', 'BetterPress'); ?>
+</option>
+<?php foreach ($allProjectData as $singleProject) {
+
+?>
+<option value="<?php echo $singleProject['int_id']; ?>" <?php
+if ($post_int_id == $singleProject['int_id']) {echo 'selected';
+}
+?> >
+<?php echo $singleProject['title'] . ' <i>ID:' . $singleProject['int_id'] . '</i>'; ?>
+</option>
+<?php
+}
+?>
+</select> 
